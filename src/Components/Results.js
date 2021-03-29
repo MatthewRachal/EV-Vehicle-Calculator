@@ -4,9 +4,8 @@ import "../App.css";
 
 //I cleaned the excel data and placed it here: I assumed that the columns for electricty were used to determine energy usage rather than the
 //ones that also used gas.
-//12AM is position 0,  1AM position 1 and so on
+//12AM is position 0, 1AM position 1 and so on
 //load profile values are annual kWh values at a given time
-
 var loadProfile = [
   600.9213029,
   547.6523973,
@@ -52,12 +51,12 @@ export default function Results(props) {
     let TOURateNoon = 0.2; //TOU Surge Rate 12PM-6PM
     let TOUNormalRate = 0.08; //TOU Rate otherwise
     let hourDiff = props.results.timeOfDay[1] - props.results.timeOfDay[0]; //Hours spent charging
-    let hours;
+    let hours; //Hours in a day
 
        if (props.results.timeOfDay[1] === props.results.timeOfDay[0]) {
-      hours = 24;
+      hours = 24; //If the same time is select for start and end, the time is 24 hours of charging
     } else if (hourDiff < 0) {
-      hours = 24 - Math.abs(hourDiff);
+      hours = 24 - Math.abs(hourDiff); //Calculating the difference between start and end
     } else {
       hours = hourDiff;
     }
@@ -69,12 +68,12 @@ export default function Results(props) {
     setFlatCar(carCostFlat);
     setFlatLoad(flatLoad);
 
-    let i = 0;
+    let i = 0; //loop counter
     let counter = 0; //The number of hours under Surge
     let currentTime = props.results.timeOfDay[0];
     let surgeLoad = 0; //The kWhs under the Surge time frame
     while (i < 23) {
-      //Switching to midnight
+      //Switching to midnight due to no times past 23:59
       if (currentTime === 24) {
         currentTime = 0;
       }
@@ -89,7 +88,7 @@ export default function Results(props) {
       } else {
         i = 24; //Reached the end of time range, end the loop
       }
-      currentTime = currentTime + 1;
+      currentTime = currentTime + 1; //Increment the hour to check for surge time and the loop
       i = i + 1;
     }
   

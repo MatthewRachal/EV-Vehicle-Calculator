@@ -1,4 +1,8 @@
-/*Global variables */
+/*
+||||||||||||||||||||
+Global Variables 
+||||||||||||||||||||
+*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 
 * {
@@ -31,7 +35,11 @@
   font-size: 1.25em;
 }
 
-/*General Styling */
+/*
+||||||||||||||||||||
+General Styling 
+||||||||||||||||||||
+*/
 .button1 {
   padding: 10px 40px 10px 40px;
   background-color: var(--appColor);
@@ -66,6 +74,7 @@
   margin: 1em 0em 1em 0em;
 }
 
+/*Miles Slider */
 .slider1 {
   -webkit-appearance: none;
   float: center;
@@ -93,6 +102,7 @@
   cursor: pointer;
 }
 
+/* Dropdown buttons */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -146,6 +156,7 @@
   display: block;
 }
 
+/* Results Box */
 .resultsBox {
   border-style: solid;
   border-width: 1px;

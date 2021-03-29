@@ -7,7 +7,7 @@ export default class UserQuestions extends Component {
     rateType: undefined,
     miles: 0,
     timeOfDay: ["Start Time", "End Time"],
-    changeDisplay: false,
+    changeDisplay: false, 
   };
 
   generateTimes = (period) => {
